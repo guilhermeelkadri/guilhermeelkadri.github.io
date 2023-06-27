@@ -1,0 +1,112 @@
+.. How to Use bluetoothctl for Bluetooth Device Management
+.. ======================================================
+bluetoothctl
+------------
+
+Introduction
+
+This tutorial will guide you through the process of using bluetoothctl command-line tool to manage Bluetooth devices on Linux. bluetoothctl is a utility provided by BlueZ, the official Bluetooth protocol stack for Linux. It allows you to control and interact with Bluetooth devices using a command-line interface.
+Prerequisites
+
+Before you begin, ensure that you have the following:
+
+- A Linux-based system with Bluetooth support.
+- bluez package installed (version 5.5 or higher).
+- Basic knowledge of the command line interface (CLI) on Linux.
+
+Step 1: Launch bluetoothctl
+
+    Open a terminal on your Linux system.
+
+    Launch bluetoothctl by running the following command:
+
+.. code-block:: bash
+
+$ bluetoothctl
+Step 2: Enable Bluetooth
+
+Before you can start managing Bluetooth devices, make sure Bluetooth is enabled on your system:
+
+    Inside the bluetoothctl prompt, enter the following command to turn on Bluetooth:
+
+.. code-block:: bash
+
+[bluetoothctl] power on
+
+    Verify that Bluetooth is now enabled by running:
+
+.. code-block:: bash
+
+[bluetoothctl] show
+
+You should see the details of your system's Bluetooth adapter.
+Step 3: Scanning for Devices
+
+To discover nearby Bluetooth devices, you can perform a scan:
+
+    Start the scanning process by entering the following command:
+
+.. code-block:: bash
+
+[bluetoothctl] scan on
+
+    Wait for a few moments while the scan is in progress. You will see a list of discovered devices along with their MAC addresses.
+
+    To stop the scan, use the command:
+
+.. code-block:: bash
+
+[bluetoothctl] scan off
+Step 4: Pairing and Connecting to Devices
+
+Once you have identified the device you want to connect to, you can initiate the pairing and connection process:
+
+    Enter the following command to start the pairing process:
+
+.. code-block:: bash
+
+[bluetoothctl] pair <device_mac_address>
+
+Replace <device_mac_address> with the MAC address of the device you want to pair with.
+
+    Follow any on-screen prompts or instructions to complete the pairing process.
+
+    Once paired, you can connect to the device using the following command:
+
+.. code-block:: bash
+
+[bluetoothctl] connect <device_mac_address>
+
+Replace <device_mac_address> with the MAC address of the device you want to connect to.
+Step 5: Managing Paired Devices
+
+You can view and manage your paired devices using the following commands:
+
+    To view a list of all paired devices:
+
+.. code-block:: bash
+
+[bluetoothctl] paired-devices
+
+    To remove a paired device:
+
+.. code-block:: bash
+
+[bluetoothctl] remove <device_mac_address>
+
+Replace <device_mac_address> with the MAC address of the device you want to remove.
+Step 6: Exiting bluetoothctl
+
+To exit bluetoothctl, simply enter the following command:
+
+.. code-block:: bash
+
+[bluetoothctl] quit
+Conclusion
+
+Congratulations! You have learned the basics of using bluetoothctl to manage Bluetooth devices on Linux. You can now scan, pair, connect, and manage your Bluetooth devices from the command line.
+
+For more advanced configurations and options, refer to the bluetoothctl documentation or the official BlueZ documentation.
+References
+
+    BlueZ
